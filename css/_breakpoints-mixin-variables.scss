@@ -1,36 +1,42 @@
-$breakpoints:( "xs":0, "sm":480px, "md":768px, "lg":992px, "xl":1200px, );
+$breakpoints: (
+    "xs": 0,
+    "sm": 480px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px
+);
 @mixin xl {
-    @media( min-width: map-get($breakpoints, 'xl')) {
+    @media (min-width: map-get($breakpoints, "xl")) {
         @content;
     }
 }
 
 @mixin xl {
-    @media( min-width: map-get($breakpoints, 'xl')) {
+    @media (min-width: map-get($breakpoints, "xl")) {
         @content;
     }
 }
 
 @mixin md {
-    @media( max-width: map-get($breakpoints, 'md')) {
+    @media (max-width: map-get($breakpoints, "md")) {
         @content;
     }
 }
 
 @mixin lg {
-    @media( max-width: map-get($breakpoints, 'lg')) {
+    @media (max-width: map-get($breakpoints, "lg")) {
         @content;
     }
 }
 
 @mixin desk {
-    @media( min-width: map-get($breakpoints, 'lg')) {
+    @media (min-width: map-get($breakpoints, "lg")) {
         @content;
     }
 }
 
 @mixin desklg {
-    @media( min-width: map-get($breakpoints, 'xl')) {
+    @media (min-width: map-get($breakpoints, "xl")) {
         @content;
     }
 }
@@ -48,7 +54,7 @@ $breakpoints:( "xs":0, "sm":480px, "md":768px, "lg":992px, "xl":1200px, );
 }
 
 //ini custom breakpoints
-@mixin breakpoint($bp:0) {
+@mixin breakpoint($bp: 0) {
     @media (min-width: $bp) {
         @content;
     }
@@ -87,11 +93,11 @@ $breakpoints:( "xs":0, "sm":480px, "md":768px, "lg":992px, "xl":1200px, );
 }
 
 @mixin primary-font {
-    font-family: 'Inter', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 @mixin secondary-font {
-    font-family: 'DM Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
 }
 
 @mixin upper {
@@ -136,47 +142,59 @@ $breakpoints:( "xs":0, "sm":480px, "md":768px, "lg":992px, "xl":1200px, );
 }
 
 @mixin img-green {
-    filter: brightness(0) saturate(100%) invert(51%) sepia(78%) saturate(5573%) hue-rotate(149deg) brightness(94%) contrast(99%);
+    filter: brightness(0) saturate(100%) invert(51%) sepia(78%) saturate(5573%) hue-rotate(149deg) brightness(94%)
+        contrast(99%);
 }
 
 @mixin img-black {
-    filter: brightness(0) saturate(100%) invert(1%) sepia(77%) saturate(1660%) hue-rotate(166deg) brightness(90%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(1%) sepia(77%) saturate(1660%) hue-rotate(166deg) brightness(90%)
+        contrast(102%);
 }
 
 @mixin img-blue {
-    filter: brightness(0) saturate(100%) invert(11%) sepia(12%) saturate(4774%) hue-rotate(193deg) brightness(95%) contrast(96%);
+    filter: brightness(0) saturate(100%) invert(11%) sepia(12%) saturate(4774%) hue-rotate(193deg) brightness(95%)
+        contrast(96%);
 }
 
 //Variables
-$primary:#08164E;
-$secondary:#D8790D;
-$orange:#D8790D;
-$yellow:#ECAF3B;
-$border-color:#D8612E;
-$darkblue:#193369;
-$lightblue:#F0F5FB;
-$red:#D60004;
-$red-hover:#C50105;
-$green:#5B7E15;
-$blue:#004B8F;
-$purple:#7A4090;
-$bg-blue:#14213f;
-$black:#000;
-$white:#ffffff;
-$gray:#555554;
-$lightgray:#F5F5F5;
-$primary-font: 'Inter',
-sans-serif;
-$secondary-font:'DM Sans',
-sans-serif;
-$shadow:0px 1px 3px 0px rgba(0, 0, 0, 0.15);
-// color paltte - 
-$colors:( "primary":$primary, "secondary":$secondary, "green":#008943, "black":#000, "lightgray":#F5F5F5);
+$primary: #153683;
+$secondary: #3267e2;
+$green: #61bb46;
+$light-green: #c5e0a6;
+$black: #000;
+$white: #ffffff;
+$gray: #4c4c4c;
+$darkgray: #222;
+$lightgray: #f5f5f5;
+$lightgray2: #efefef;
+$lightgray3: #ececec;
+
+$orange: #d8790d;
+$yellow: #ecaf3b;
+$border-color: #d8612e;
+$darkblue: #193369;
+$lightblue: #f0f5fb;
+$red: #d60004;
+$red-hover: #c50105;
+$blue: #004b8f;
+$purple: #7a4090;
+$bg-blue: #14213f;
+$primary-font: "Poppins", sans-serif;
+$secondary-font: "Noto Sans", sans-serif;
+$shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.15);
+// color paltte -
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "green": #008943,
+    "black": #000,
+    "lightgray": #f5f5f5
+);
 .test-btn {
     background-color: map-get($colors, "blue");
 }
 
-@mixin fancy-border($size:1px, $color:#000) {
+@mixin fancy-border($size: 1px, $color: #000) {
     border: $size solid $color;
     border-radius: 5px;
     -webkit-border-radius: 5px;

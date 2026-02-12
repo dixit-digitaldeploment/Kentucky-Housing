@@ -2,9 +2,13 @@
 body {
     color: $black;
     font-size: 16px;
+    font-weight: 500;
     @include secondary-font;
+    overflow-x: hidden;
     &.wp-admin {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        font-family:
+            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+            sans-serif;
     }
 }
 
@@ -29,47 +33,47 @@ h6,
 
 h1,
 .h1 {
-    font-size: 42px;
-    color: $black;
-    font-weight: 800;
+    font-size: 32px;
+    color: $primary;
+    font-weight: 900;
     margin-bottom: 16px;
 }
 
 h2,
 .h2 {
-    font-size: 32px;
+    font-size: 26px;
     color: $black;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 16px;
 }
 
 h3,
 .h3 {
-    font-size: 24px;
+    font-size: 22px;
     color: $black;
     font-weight: 700;
 }
 
 h4,
 .h4 {
-    font-size: 21px;
+    font-size: 19px;
     color: $black;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h5,
 .h5 {
     font-size: 18px;
     color: $black;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: none;
 }
 
 h6,
 .h6 {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 600;
     text-transform: none;
-    @include secondary-font;
 }
 
 .h1,
@@ -84,7 +88,7 @@ h6,
 p {
     line-height: 24px;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 500;
     color: $black;
     @include secondary-font;
 }
@@ -94,33 +98,35 @@ p.has-large-font-size {
     line-height: 36px;
 }
 
-p+ul,
-p+ol {
+p + ul,
+p + ol {
     margin-top: -15px;
 }
 
 a {
-    color: #005598;
+    color: $primary;
     font-weight: 600;
+    text-decoration: underline;
     &:hover {
-        color: #14213f;
+        color: $secondary;
         text-decoration: underline;
         text-decoration-style: solid !important;
     }
 }
 
 p a {
-    color: #005598;
+    color: $primary;
     font-weight: 600;
     text-decoration: underline;
     text-decoration-style: solid !important;
     &:hover {
-        color: #14213f;
+        color: $secondary;
         text-decoration: underline;
     }
 }
 
-p a:hover {}
+p a:hover {
+}
 
 b,
 strong {
@@ -148,30 +154,45 @@ strong {
 }
 
 .btn_sm {
-    color: #000;
+    color: #fff;
     padding: 12px 24px;
     display: inline-block;
     text-align: center;
     position: relative;
-    background: none;
-    font-family: $primary-font;
-    font-size: 18px;
+    background: $primary;
+    font-size: 16px;
     text-decoration: none;
-    font-weight: 800;
-    border-bottom: 3px solid $secondary;
-    border-radius: 5px 5px 0px 0px;
+    font-weight: 700;
+    border-radius: 50px;
+    border: 2px solid $primary;
+    line-height: 1;
+    min-height: 44px;
     &:hover,
     &:focus-within {
-        background: $secondary;
-        color: #000;
+        background: $green;
+        color: $primary;
+        border-color: $green;
         text-decoration: none;
-        img {}
+        img {
+        }
     }
     img {
         margin-left: 7px;
     }
     &:focus {
         color: #000;
+    }
+
+    &.secondary {
+        background: $light-green;
+        color: $primary;
+        border-color: $light-green;
+        &:hover,
+        &:focus-within {
+            background: $white;
+            color: $primary;
+            border-color: $primary;
+        }
     }
 }
 
@@ -188,11 +209,18 @@ video {
     max-width: 100%;
 }
 
-.form-control {
-    min-height: 40px;
+.form-control,
+input,
+textarea,
+select {
+    min-height: 44px;
     background-color: $white;
-    border: 1px solid #000;
+    border: 1px solid #4c4c4c;
     border-radius: 5px;
+    padding: 10px 16px;
+    display: block;
+    font-size: 15px;
+    color: $gray;
 }
 
 .no-margin {
@@ -200,30 +228,78 @@ video {
     margin-right: 0px;
 }
 
-.sm-gutters>.col,
-.sm-gutters>[class*="col-"] {
+.sm-gutters > .col,
+.sm-gutters > [class*="col-"] {
     padding-right: 5px;
     padding-left: 5px;
 }
 
 select {
-    min-height: 40px;
+    min-height: 44px;
     background-image: url(../img/select-arrow.svg);
     background-repeat: no-repeat;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-position: top 14px right 12px;
+    background-position: top 20px right 12px;
     min-width: 130px;
-    background-size: 18px;
-    color: $black;
-    border: 1px solid #000;
+    background-size: 14px;
+    color: $gray;
+    border: 1px solid var(--Grey, #4c4c4c);
     border-radius: 5px;
     &.form-control {
         color: #555554;
         cursor: pointer;
     }
 }
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    background: #fff;
+    min-height: auto;
+    appearance: initial;
+    &:checked {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10.0705 3.13127C10.2467 3.30752 10.2467 3.59252 10.0705 3.7669L5.12047 8.71877C4.94422 8.89502 4.65922 8.89502 4.48484 8.71877L1.93297 6.16877C1.75672 5.99252 1.75672 5.70752 1.93297 5.53315C2.10922 5.35877 2.39422 5.3569 2.56859 5.53315L4.79984 7.7644L9.43297 3.13127C9.60922 2.95502 9.89422 2.95502 10.0686 3.13127H10.0705Z" fill="%23153683"/></svg>');
+        background-size: contain;
+        &::before {
+            display: none !important;
+        }
+    }
+}
+input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border: 1px solid #000 !important;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: auto;
+    &:checked::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        display: block;
+        background: #153683;
+        border-radius: 50%;
+        margin: auto;
+    }
+    &::before {
+        display: none !important;
+    }
+}
 
+.checkboxes {
+    label {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+}
 .search-box {
     .btn {
         position: absolute;
@@ -233,29 +309,34 @@ select {
         z-index: 9;
         transition: none;
         &:hover {
-            img {}
+            img {
+            }
         }
     }
     .form-control {
         color: #000;
     }
-     ::-webkit-input-placeholder {
+    ::-webkit-input-placeholder {
         color: #000;
     }
-     ::-moz-placeholder {
+    ::-moz-placeholder {
         color: #000;
     }
-     :-ms-input-placeholder {
+    :-ms-input-placeholder {
         color: #000;
     }
-     :-moz-placeholder {
+    :-moz-placeholder {
         color: #000;
     }
 }
 
 label.title {
+    font-size: 16px;
+    font-style: normal;
     font-weight: 700;
-    @include primary-font;
+    font-family:"Nunito Sans", sans-serif;
+    margin-bottom: 6px;
+    line-height: 1;
 }
 
 ::-webkit-input-placeholder {
@@ -284,4 +365,17 @@ label.title {
     opacity: 1 !important;
     font-size: 14px !important;
     font-weight: normal !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #e2e2e2;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #4c4c4c;
 }

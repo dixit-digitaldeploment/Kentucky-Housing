@@ -217,6 +217,38 @@ $(document).ready(function() {
 
 });
 
+function setHeroHeight() {
+    var headerHeight = jQuery("header").outerHeight();
+    var alertbar = jQuery(".alert-area").is(":visible")
+      ? jQuery(".alert-area").outerHeight()
+      : 0;
+    jQuery(".main_wrapper, .main_banner").css("padding-top", headerHeight + "px");
+    // if (jQuery("#wpadminbar").length) {
+    //   jQuery(".alert-area").css("top", headerHeight + 30 + "px");
+    //   jQuery(".kt-tabs-title-list").css(
+    //     "top",
+    //     headerHeight + alertbar + 30 + "px"
+    //   );
+    // } else {
+    //   jQuery(".alert-area").css("top", headerHeight + "px");
+    //   jQuery(".kt-tabs-title-list").css("top", headerHeight + alertbar + "px");
+    // }
+  }
+  
+  //   Initial run
+  setHeroHeight();
+  
+  //   Observe header size changes
+  const header = document.querySelector("header");
+  
+  if (header && "ResizeObserver" in window) {
+    const resizeObserver = new ResizeObserver(() => {
+      setHeroHeight();
+    });
+    resizeObserver.observe(header);
+  }
+
+  
 $(window).on('resize', function() {
     /*
        if (jQuery(window).width() < 1200) {
@@ -360,3 +392,29 @@ $(".kb-table").each(function() {
         $table.prepend($thead); // Insert thead before tbody
     }
 });
+(function ($) {
+    /* jQuery('.accordion_event > li:eq(0) .acco_title').addClass('active').next().slideDown();*/
+  
+    jQuery(".acc__main .acc__title").on("click keydown", function (event) {
+      if (event.type === "click" || event.key === "Enter" || event.key === " ") {
+        var dropDown = jQuery(this).closest(".acc__card").find(".acc__panel");
+        var parentAccordion = jQuery(this).closest(".acc__main");
+  
+        parentAccordion.find(".acc__panel").not(dropDown).slideUp();
+        parentAccordion
+          .find(".acc__title.active")
+          .not(this)
+          .removeClass("active");
+  
+        if (jQuery(this).hasClass("active")) {
+          jQuery(this).removeClass("active");
+        } else {
+          jQuery(this).addClass("active");
+        }
+  
+        dropDown.stop(false, true).slideToggle();
+  
+        event.preventDefault();
+      }
+    });
+  })(jQuery);
