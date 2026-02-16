@@ -2311,6 +2311,7 @@ body.gin--classic-toolbar .main_header {
   background: var(--Light-grey-2, #efefef);
   width: -moz-max-content;
   width: max-content;
+  margin-bottom: 10px !important;
 }
 .news_category:hover {
   background: #c5e0a6;
@@ -3018,12 +3019,18 @@ p.date {
 }
 .event-detail .up_events .evtrow {
   margin-bottom: 0px;
+  margin-left: 0;
+  margin-right: 0;
 }
 .event-detail .up_events .views-element-container > div {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+.event-detail .up_events .views-element-container > div .evtcol {
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .event-detail .up_events .views-element-container > div .views-field,
 .event-detail .up_events .views-element-container > div .field-content > div {
@@ -4149,6 +4156,17 @@ p.date {
   }
 }
 
+@media (max-width: 768px) {
+  .fc-header-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fc-header-toolbar .fc-center {
+    order: 3;
+  }
+}
+
 .fc-view.fc-list-view {
   border: none;
 }
@@ -4223,48 +4241,50 @@ p.date {
   font-weight: 600;
   line-height: 24px;
 }
-.fc-view.fc-dayGrid-view .fc-body .fc-day.fc-today {
-  background: #e1eaff;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-day.fc-other-month {
-  background: #ececec;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton td,
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton th {
-  padding: 8px;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton td.fc-other-month,
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton th.fc-other-month {
-  opacity: 1;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton td .fc-day-number,
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton th .fc-day-number {
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  color: #000;
-  text-decoration: none;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event {
-  background: none !important;
-  border: none !important;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-time {
-  display: block;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  color: #000;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title {
-  color: var(--Blue, #153683);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-}
-.fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title:hover {
-  color: #3267e2;
+@media (min-width: 768px) {
+  .fc-view.fc-dayGrid-view .fc-body .fc-day.fc-today {
+    background: #e1eaff;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-day.fc-other-month {
+    background: #ececec;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton td,
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton th {
+    padding: 8px;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton td.fc-other-month,
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton th.fc-other-month {
+    opacity: 1;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton td .fc-day-number,
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton th .fc-day-number {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event {
+    background: none !important;
+    border: none !important;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-time {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title {
+    color: var(--Blue, #153683);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .fc-view.fc-dayGrid-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title:hover {
+    color: #3267e2;
+  }
 }
 .fc-view.fc-timeGridWeek-view .fc-head .fc-head-container,
 .fc-view.fc-timeGridWeek-view .fc-head .fc-day-header,
@@ -4285,88 +4305,90 @@ p.date {
   text-decoration: underline;
   text-align: center;
 }
-.fc-view.fc-timeGridWeek-view .fc-body .fc-day.fc-today {
-  background: none;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-day.fc-other-month {
-  background: none;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid .fc-row {
-  min-height: 36px;
-  border: none;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid .fc-bg {
-  background: #ececec;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid .fc-bg td {
-  padding: 9px 8px;
-  background: #ececec;
-  text-align: left;
-  text-transform: capitalize;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid td {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td {
-  padding: 8px;
-  text-align: left;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event {
-  background: var(--Light-grey-3, #ececec) !important;
-  border-radius: 0 !important;
-  border: 0px !important;
-  color: #000;
-  padding: 8px;
-  cursor: pointer;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event .fc-title {
-  color: var(--Blue, #153683);
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event:hover .fc-title {
-  color: #3267e2;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton td.fc-other-month,
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton th.fc-other-month {
-  opacity: 1;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton td .fc-day-number,
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton th .fc-day-number {
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  color: #000;
-  text-decoration: none;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event {
-  background: none !important;
-  border: none !important;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-time {
-  display: block;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  color: #000;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title {
-  color: var(--Blue, #153683);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-}
-.fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title:hover {
-  color: #3267e2;
+@media (min-width: 768px) {
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-day.fc-today {
+    background: none;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-day.fc-other-month {
+    background: none;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid .fc-row {
+    min-height: 36px;
+    border: none;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid .fc-bg {
+    background: #ececec;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid .fc-bg td {
+    padding: 9px 8px;
+    background: #ececec;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-day-grid td {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td {
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event {
+    background: var(--Light-grey-3, #ececec) !important;
+    border-radius: 0 !important;
+    border: 0px !important;
+    color: #000;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event .fc-title {
+    color: var(--Blue, #153683);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event:hover .fc-title {
+    color: #3267e2;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton td.fc-other-month,
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton th.fc-other-month {
+    opacity: 1;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton td .fc-day-number,
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton th .fc-day-number {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event {
+    background: none !important;
+    border: none !important;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-time {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title {
+    color: var(--Blue, #153683);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .fc-view.fc-timeGridWeek-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title:hover {
+    color: #3267e2;
+  }
 }
 .fc-view.fc-timeGridDay-view .fc-head {
   display: none;
@@ -4390,88 +4412,90 @@ p.date {
   text-decoration: underline;
   text-align: center;
 }
-.fc-view.fc-timeGridDay-view .fc-body .fc-day.fc-today {
-  background: none;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-day.fc-other-month {
-  background: none;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-day-grid .fc-row {
-  min-height: 36px;
-  border: none;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-day-grid .fc-bg {
-  background: #ececec;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-day-grid .fc-bg td {
-  padding: 9px 8px;
-  background: #ececec;
-  text-align: left;
-  text-transform: capitalize;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-day-grid td {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td {
-  padding: 8px;
-  text-align: left;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event {
-  background: var(--Light-grey-3, #ececec) !important;
-  border-radius: 0 !important;
-  border: 0px !important;
-  color: #000;
-  padding: 8px;
-  cursor: pointer;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event .fc-title {
-  color: var(--Blue, #153683);
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event:hover .fc-title {
-  color: #3267e2;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton td.fc-other-month,
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton th.fc-other-month {
-  opacity: 1;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton td .fc-day-number,
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton th .fc-day-number {
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 600;
-  color: #000;
-  text-decoration: none;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event {
-  background: none !important;
-  border: none !important;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-time {
-  display: block;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  color: #000;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title {
-  color: var(--Blue, #153683);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  text-decoration: underline;
-}
-.fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title:hover {
-  color: #3267e2;
+@media (min-width: 768px) {
+  .fc-view.fc-timeGridDay-view .fc-body .fc-day.fc-today {
+    background: none;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-day.fc-other-month {
+    background: none;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-day-grid .fc-row {
+    min-height: 36px;
+    border: none;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-day-grid .fc-bg {
+    background: #ececec;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-day-grid .fc-bg td {
+    padding: 9px 8px;
+    background: #ececec;
+    text-align: left;
+    text-transform: capitalize;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-day-grid td {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td {
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event {
+    background: var(--Light-grey-3, #ececec) !important;
+    border-radius: 0 !important;
+    border: 0px !important;
+    color: #000;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event .fc-title {
+    color: var(--Blue, #153683);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-time-grid-container table tbody td .fc-time-grid-event:hover .fc-title {
+    color: #3267e2;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton td.fc-other-month,
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton th.fc-other-month {
+    opacity: 1;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton td .fc-day-number,
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton th .fc-day-number {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event {
+    background: none !important;
+    border: none !important;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-time {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title {
+    color: var(--Blue, #153683);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .fc-view.fc-timeGridDay-view .fc-body .fc-content-skeleton .fc-day-grid-event .fc-content .fc-title:hover {
+    color: #3267e2;
+  }
 }
 
 .fc-unthemed .fc-content,
@@ -4679,6 +4703,32 @@ p.date {
 
 .page-node-5 .main_breadcrumb {
       display: none;
+}
+
+.lender_template .img_text_card .text-img-wrap .text_card_block .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.lender_template .img_text_card .text-img-wrap .text_card_block .title h3 {
+  margin: 0;
+}
+.lender_template .img_text_card .text-img-wrap .text_card_block .title h4 {
+  font-size: 16px;
+}
+.lender_template .img_text_card .text-img-wrap .text_card_block .title .badge {
+  margin-left: auto;
+}
+.lender_template .img_text_card .text-img-wrap .text_card_block .doc_block {
+  margin-bottom: 6px;
+}
+.lender_template .img_text_card .text-img-wrap .text_card_block p {
+  display: block;
+  overflow: auto;
+  margin: 0;
+}
+.lender_template .img_text_card .text-img-wrap .text_card_block p > span {
+  margin-bottom: 6px;
 }
 
 .lender_filter {
@@ -7082,8 +7132,6 @@ figure.aligncenter {
     width: 100vw;
     margin-left: 50% !important;
     transform: translateX(-50%);
-    padding-left: 15px !important;
-    padding-right: 15px !important;
   }
 }
 .wp-block-group > .document_era .col-md-12 {

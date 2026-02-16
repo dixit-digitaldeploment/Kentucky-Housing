@@ -792,6 +792,7 @@
   border-radius: 5px;
   background: var(--Light-grey-2, #efefef);
   width: max-content;
+  margin-bottom: 10px !important;
   &:hover {
     background: #c5e0a6;
   }
@@ -1088,7 +1089,7 @@ p.date {
     > .form-actions {
       flex: 0 0 100px;
     }
-    @include md{
+    @include md {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -1521,6 +1522,8 @@ p.date {
     padding-bottom: 40px;
     .evtrow {
       margin-bottom: 0px;
+      margin-left: 0;
+      margin-right: 0;
     }
     .views-element-container > div {
       display: -ms-flexbox;
@@ -1529,6 +1532,10 @@ p.date {
       flex-wrap: wrap;
       margin-right: -15px;
       margin-left: -15px;
+      .evtcol {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
       .views-field,
       .field-content > div {
         display: contents;
@@ -2706,6 +2713,17 @@ p.date {
   }
 }
 
+.fc-header-toolbar {
+  @include md {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    .fc-center{
+      order: 3;
+    }
+  }
+}
+
 .fc-view.fc-list-view {
   border: none;
   .fc-scroller {
@@ -2792,49 +2810,51 @@ p.date {
         line-height: 24px;
       }
     }
-    .fc-body {
-      .fc-day {
-        &.fc-today {
-          background: #e1eaff;
-        }
-        &.fc-other-month {
-          background: #ececec;
-        }
-      }
-      .fc-content-skeleton {
-        td,
-        th {
-          padding: 8px;
+    @media (min-width: 768px) {
+      .fc-body {
+        .fc-day {
+          &.fc-today {
+            background: #e1eaff;
+          }
           &.fc-other-month {
-            opacity: 1;
-          }
-          .fc-day-number {
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 600;
-            color: #000;
-            text-decoration: none;
+            background: #ececec;
           }
         }
-        .fc-day-grid-event {
-          background: none !important;
-          border: none !important;
-          .fc-content {
-            .fc-time {
-              display: block;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              color: #000;
+        .fc-content-skeleton {
+          td,
+          th {
+            padding: 8px;
+            &.fc-other-month {
+              opacity: 1;
             }
-            .fc-title {
-              color: var(--Blue, #153683);
-              font-size: 16px;
+            .fc-day-number {
+              font-size: 15px;
               font-style: normal;
-              font-weight: 700;
-              text-decoration: underline;
-              &:hover {
-                color: $secondary;
+              font-weight: 600;
+              color: #000;
+              text-decoration: none;
+            }
+          }
+          .fc-day-grid-event {
+            background: none !important;
+            border: none !important;
+            .fc-content {
+              .fc-time {
+                display: block;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                color: #000;
+              }
+              .fc-title {
+                color: var(--Blue, #153683);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                text-decoration: underline;
+                &:hover {
+                  color: $secondary;
+                }
               }
             }
           }
@@ -2867,106 +2887,108 @@ p.date {
         text-align: center;
       }
     }
-    .fc-body {
-      .fc-day {
-        &.fc-today {
-          background: none;
-        }
-        &.fc-other-month {
-          background: none;
-        }
-      }
-      .fc-day-grid {
-        .fc-row {
-          // margin: 0 !important;
-          min-height: 36px;
-
-          border: none;
-        }
-        .fc-bg {
-          background: #ececec;
-          td {
-            padding: 9px 8px;
-            background: #ececec;
-            text-align: left;
-            text-transform: capitalize;
+    @media (min-width: 768px) {
+      .fc-body {
+        .fc-day {
+          &.fc-today {
+            background: none;
+          }
+          &.fc-other-month {
+            background: none;
           }
         }
-        td {
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-        }
-      }
-      .fc-time-grid-container {
-        table {
-          tbody {
+        .fc-day-grid {
+          .fc-row {
+            // margin: 0 !important;
+            min-height: 36px;
+
+            border: none;
+          }
+          .fc-bg {
+            background: #ececec;
             td {
-              padding: 8px;
+              padding: 9px 8px;
+              background: #ececec;
               text-align: left;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              // border-style: solid;
-              .fc-time-grid-event {
-                background: var(--Light-grey-3, #ececec) !important;
-                border-radius: 0 !important;
-                border: 0px !important;
-                color: #000;
+              text-transform: capitalize;
+            }
+          }
+          td {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+          }
+        }
+        .fc-time-grid-container {
+          table {
+            tbody {
+              td {
                 padding: 8px;
-                cursor: pointer;
-                .fc-title {
-                  color: var(--Blue, #153683);
-                  font-family: $primary-font;
-                  font-size: 16px;
-                  font-style: normal;
-                  font-weight: 700;
-                  text-decoration: underline;
-                }
-                &:hover {
+                text-align: left;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                // border-style: solid;
+                .fc-time-grid-event {
+                  background: var(--Light-grey-3, #ececec) !important;
+                  border-radius: 0 !important;
+                  border: 0px !important;
+                  color: #000;
+                  padding: 8px;
+                  cursor: pointer;
                   .fc-title {
-                    color: $secondary;
+                    color: var(--Blue, #153683);
+                    font-family: $primary-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    text-decoration: underline;
+                  }
+                  &:hover {
+                    .fc-title {
+                      color: $secondary;
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-      .fc-content-skeleton {
-        td,
-        th {
-          // padding: 8px;
-          &.fc-other-month {
-            opacity: 1;
-          }
-          .fc-day-number {
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 600;
-            color: #000;
-            text-decoration: none;
-          }
-        }
-        .fc-day-grid-event {
-          background: none !important;
-          border: none !important;
-          .fc-content {
-            .fc-time {
-              display: block;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              color: #000;
+        .fc-content-skeleton {
+          td,
+          th {
+            // padding: 8px;
+            &.fc-other-month {
+              opacity: 1;
             }
-            .fc-title {
-              color: var(--Blue, #153683);
-              font-size: 16px;
+            .fc-day-number {
+              font-size: 15px;
               font-style: normal;
-              font-weight: 700;
-              text-decoration: underline;
-              &:hover {
-                color: $secondary;
+              font-weight: 600;
+              color: #000;
+              text-decoration: none;
+            }
+          }
+          .fc-day-grid-event {
+            background: none !important;
+            border: none !important;
+            .fc-content {
+              .fc-time {
+                display: block;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                color: #000;
+              }
+              .fc-title {
+                color: var(--Blue, #153683);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                text-decoration: underline;
+                &:hover {
+                  color: $secondary;
+                }
               }
             }
           }
@@ -3000,105 +3022,107 @@ p.date {
         text-align: center;
       }
     }
-    .fc-body {
-      .fc-day {
-        &.fc-today {
-          background: none;
-        }
-        &.fc-other-month {
-          background: none;
-        }
-      }
-      .fc-day-grid {
-        .fc-row {
-          // margin: 0 !important;
-          min-height: 36px;
-          border: none;
-        }
-        .fc-bg {
-          background: #ececec;
-          td {
-            padding: 9px 8px;
-            background: #ececec;
-            text-align: left;
-            text-transform: capitalize;
+    @media (min-width: 768px) {
+      .fc-body {
+        .fc-day {
+          &.fc-today {
+            background: none;
+          }
+          &.fc-other-month {
+            background: none;
           }
         }
-        td {
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-        }
-      }
-      .fc-time-grid-container {
-        table {
-          tbody {
+        .fc-day-grid {
+          .fc-row {
+            // margin: 0 !important;
+            min-height: 36px;
+            border: none;
+          }
+          .fc-bg {
+            background: #ececec;
             td {
-              padding: 8px;
+              padding: 9px 8px;
+              background: #ececec;
               text-align: left;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              // border-style: solid;
-              .fc-time-grid-event {
-                background: var(--Light-grey-3, #ececec) !important;
-                border-radius: 0 !important;
-                border: 0px !important;
-                color: #000;
+              text-transform: capitalize;
+            }
+          }
+          td {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+          }
+        }
+        .fc-time-grid-container {
+          table {
+            tbody {
+              td {
                 padding: 8px;
-                cursor: pointer;
-                .fc-title {
-                  color: var(--Blue, #153683);
-                  font-family: $primary-font;
-                  font-size: 16px;
-                  font-style: normal;
-                  font-weight: 700;
-                  text-decoration: underline;
-                }
-                &:hover {
+                text-align: left;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                // border-style: solid;
+                .fc-time-grid-event {
+                  background: var(--Light-grey-3, #ececec) !important;
+                  border-radius: 0 !important;
+                  border: 0px !important;
+                  color: #000;
+                  padding: 8px;
+                  cursor: pointer;
                   .fc-title {
-                    color: $secondary;
+                    color: var(--Blue, #153683);
+                    font-family: $primary-font;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    text-decoration: underline;
+                  }
+                  &:hover {
+                    .fc-title {
+                      color: $secondary;
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-      .fc-content-skeleton {
-        td,
-        th {
-          // padding: 8px;
-          &.fc-other-month {
-            opacity: 1;
-          }
-          .fc-day-number {
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 600;
-            color: #000;
-            text-decoration: none;
-          }
-        }
-        .fc-day-grid-event {
-          background: none !important;
-          border: none !important;
-          .fc-content {
-            .fc-time {
-              display: block;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              color: #000;
+        .fc-content-skeleton {
+          td,
+          th {
+            // padding: 8px;
+            &.fc-other-month {
+              opacity: 1;
             }
-            .fc-title {
-              color: var(--Blue, #153683);
-              font-size: 16px;
+            .fc-day-number {
+              font-size: 15px;
               font-style: normal;
-              font-weight: 700;
-              text-decoration: underline;
-              &:hover {
-                color: $secondary;
+              font-weight: 600;
+              color: #000;
+              text-decoration: none;
+            }
+          }
+          .fc-day-grid-event {
+            background: none !important;
+            border: none !important;
+            .fc-content {
+              .fc-time {
+                display: block;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                color: #000;
+              }
+              .fc-title {
+                color: var(--Blue, #153683);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                text-decoration: underline;
+                &:hover {
+                  color: $secondary;
+                }
               }
             }
           }
@@ -3323,13 +3347,47 @@ p.date {
       display: none;
 }
 // lender page
-.lender_filter{
+
+.lender_template{
+  .img_text_card{
+    .text-img-wrap{
+      .text_card_block{
+        .title{
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          h3{
+            margin: 0;
+          }
+          h4{
+            font-size: 16px;
+          }
+          .badge{
+            margin-left: auto;
+          }
+        }
+        .doc_block{
+          margin-bottom: 6px;
+        }
+        p{
+          display: block;
+          overflow: auto;
+          margin: 0;
+          >span{
+            margin-bottom: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+.lender_filter {
   margin-bottom: 24px;
-  form>*{
+  form > * {
     margin-bottom: 16px;
   }
-  .search-box{
-    input{
+  .search-box {
+    input {
       border-radius: 5px !important;
     }
   }
