@@ -326,6 +326,9 @@ label.title {
   margin-bottom: 6px;
   line-height: 1;
 }
+label.title + .checkboxes {
+  margin-top: 16px;
+}
 
 ::-webkit-input-placeholder {
   color: #36393f !important;
@@ -3504,7 +3507,7 @@ p.date {
   transition: color 0.3s ease;
 }
 #pagination-bottom a:hover {
-  color: #262626;
+  color: rgb(37.75, 37.75, 37.75);
 }
 #pagination-bottom > div,
 #pagination-bottom span,
@@ -6239,11 +6242,6 @@ h2 + .expand_img_grid {
 .wp-block-kadence-tabs.alignwide {
   max-width: 1200px !important;
 }
-.wp-block-kadence-tabs .kt-tabs-wrap {
-  max-width: 100% !important;
-  /* Track */
-  /* Handle */
-}
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-tabs-title-list {
   flex-wrap: nowrap !important;
   justify-content: flex-start;
@@ -6321,6 +6319,9 @@ h2 + .expand_img_grid {
     margin-right: 0 !important;
   }
 }
+.wp-block-kadence-tabs .kt-tabs-wrap {
+  max-width: 100% !important;
+}
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-tab-inner-content {
   border: 0 !important;
   background: none !important;
@@ -6336,8 +6337,14 @@ h2 + .expand_img_grid {
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-tabs-title-list::-webkit-scrollbar {
   width: 10px;
 }
+.wp-block-kadence-tabs .kt-tabs-wrap {
+  /* Track */
+}
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-tabs-title-list::-webkit-scrollbar-track {
   background: #7c878d;
+}
+.wp-block-kadence-tabs .kt-tabs-wrap {
+  /* Handle */
 }
 .wp-block-kadence-tabs .kt-tabs-wrap .kt-tabs-title-list::-webkit-scrollbar-thumb {
   background: #504d49;
@@ -6614,10 +6621,6 @@ h2 + .expand_img_grid {
   background: #fff !important;
 }
 
-.advgb-tabs-wrapper {
-  /* Track */
-  /* Handle */
-}
 .advgb-tabs-wrapper ul.advgb-tabs-panel {
   display: flex;
   justify-content: center;
@@ -6695,8 +6698,14 @@ h2 + .expand_img_grid {
   width: 6px;
   height: 6px;
 }
+.advgb-tabs-wrapper {
+  /* Track */
+}
 .advgb-tabs-wrapper .advgb-tabs-panel::-webkit-scrollbar-track {
   background: #e2e2e2;
+}
+.advgb-tabs-wrapper {
+  /* Handle */
 }
 .advgb-tabs-wrapper .advgb-tabs-panel::-webkit-scrollbar-thumb {
   background: #4c4c4c;
@@ -7119,7 +7128,6 @@ figure.aligncenter {
   padding-bottom: 40px;
   padding-left: 0px !important;
   padding-right: 0px !important;
-  clear: both;
 }
 @media (min-width: 1200px) {
   .wp-block-group {
@@ -7133,6 +7141,9 @@ figure.aligncenter {
     margin-left: 50% !important;
     transform: translateX(-50%);
   }
+}
+.wp-block-group {
+  clear: both;
 }
 .wp-block-group > .document_era .col-md-12 {
   padding-left: 0px;
@@ -8211,12 +8222,6 @@ legend.gform-field-label {
 }
 .tribe-events {
   /* top searchbar*/
-  /* top search bar ends*/
-  /* date area starts*/
-  /* date area ends*/
-  /* filter Bar*/
-  /* filter Bar ends */
-  /* List area*/
 }
 .tribe-events .tribe-events-header__events-bar {
   border: 1px solid #000 !important;
@@ -8290,6 +8295,10 @@ legend.gform-field-label {
 .tribe-events.tribe-common .tribe-events-header__top-bar .tribe-events-c-top-bar__today-button:hover {
   background: #e1e1e1 !important;
 }
+.tribe-events {
+  /* top search bar ends*/
+  /* date area starts*/
+}
 .tribe-events .tribe-events-header__top-bar .tribe-events-c-top-bar__datepicker-time {
   font-size: 36px;
   font-weight: bold;
@@ -8309,6 +8318,10 @@ legend.gform-field-label {
 }
 .tribe-events .tribe-events-header__top-bar .tribe-common-c-btn-icon:not(:disabled) svg path {
   fill: #153683;
+}
+.tribe-events {
+  /* date area ends*/
+  /* filter Bar*/
 }
 .tribe-events .tribe-filter-bar .tribe-filter-bar__form-heading {
   color: #000;
@@ -8338,13 +8351,16 @@ legend.gform-field-label {
 .tribe-events .tribe-filter-bar .tribe-filter-bar__filters .tribe-filter-bar-c-filter__toggle-icon.tribe-filter-bar-c-filter__toggle-icon--minus {
   transform: rotate(180deg);
 }
+.tribe-events {
+  /* filter Bar ends */
+  /* List area*/
+}
 .tribe-events .tribe-events-calendar-list .tribe-events-calendar-list__month-separator {
   display: none;
 }
 .tribe-events .tribe-events-calendar-list .tribe-events-calendar-list__event-row {
   border-radius: 5px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15) !important;
-  padding: 16px !important;
 }
 @media (max-width: 768px) {
   .tribe-events .tribe-events-calendar-list .tribe-events-calendar-list__event-row {
@@ -8358,6 +8374,9 @@ legend.gform-field-label {
   .tribe-events .tribe-events-calendar-list .tribe-events-calendar-list__event-row .tribe-events-calendar-list__event-featured-image-wrapper {
     grid-column: 1/3 !important;
   }
+}
+.tribe-events .tribe-events-calendar-list .tribe-events-calendar-list__event-row {
+  padding: 16px !important;
 }
 .tribe-events .tribe-events-calendar-list .tribe-events-calendar-list__event-row .tribe-events-calendar-list__event-wrapper {
   padding-left: 10px !important;

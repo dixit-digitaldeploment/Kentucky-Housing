@@ -203,12 +203,24 @@
                     </div>
                     <div class="filter_box" id="filter-category-box">
                       <label class="title" for="sort">Languages</label>
-                      <select id="sort" class="form-control" aria-label="Filter by Languages">
-                        <option>Languages</option>
-                        <option class="">All</option>
-                        <option class="">1</option>
-                        <option class="">2</option>
-                      </select>
+                      <div class="checkboxes">
+                        <label class="title" for="first_place">
+                          <input type="checkbox" class="form-control" id="first_place" name="first_place"
+                            value="first_place">
+                          First Place </label>
+                        <label class="title" for="second_place">
+                          <input type="checkbox" class="form-control" id="second_place" name="second_place"
+                            value="second_place">
+                          Second Place </label>
+                        <label class="title" for="third_place">
+                          <input type="checkbox" class="form-control" id="third_place" name="third_place"
+                            value="third_place">
+                          Third Place </label>
+                        <label class="title" for="runnerUp">
+                          <input type="checkbox" class="form-control" id="runnerUp" name="runnerUp"
+                            value="runnerUp">
+                          Runner-Up </label>
+                      </div>
                     </div>
                     <a class="reset" data-uw-rm-kbnav="anohref" tabindex="0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -231,9 +243,9 @@
                       </div>
                       <div class="text_card_block">
                         <div class="title">
-                          <h3>Title of News Item</h3>
                           <span class="badge">badge</span>
                         </div>
+                        <h3>Title of News Item</h3>
                         <p>
                           <a class="doc_block" href="#"><img src="./img/call-blue.svg" alt="">12344363643</a>
                           <a class="doc_block" href="#"><img src="./img/mail-blue.svg" alt="">test@mail.com</a>
@@ -253,11 +265,11 @@
                       </div>
                       <div class="text_card_block">
                         <div class="title">
-                          <div>
-                            <h3>Title of News Item</h3>
-                            <h4>ABC Mortgage</h4>
-                          </div>
                           <span class="badge">badge</span>
+                        </div>
+                        <div>
+                          <h3>Title of News Item</h3>
+                          <h4>ABC Mortgage</h4>
                         </div>
                         <p>
                           <span class="d-block"><span><b>NMLS </b> </span>#123456</span>
@@ -276,9 +288,9 @@
                       </div>
                       <div class="text_card_block">
                         <div class="title">
-                          <h3>Title of News Item</h3>
                           <span class="badge">badge</span>
                         </div>
+                        <h3>Title of News Item</h3>
                         <p>
                           <a class="doc_block" href="#"><img src="./img/call-blue.svg" alt="">12344363643</a>
                           <a class="doc_block" href="#"><img src="./img/mail-blue.svg" alt="">test@mail.com</a>
