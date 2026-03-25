@@ -3455,4 +3455,9 @@ p.date {
       border-radius: 5px !important;
     }
   }
+  @media (max-width:767px) {
+    form {
+      grid-template-columns: 100%;
+    }
+  }
 }

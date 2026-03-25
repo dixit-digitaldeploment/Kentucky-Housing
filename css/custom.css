@@ -5029,6 +5029,11 @@ p.date {
 .lender_filter .search-box input {
   border-radius: 5px !important;
 }
+@media (max-width: 767px) {
+  .lender_filter form {
+    grid-template-columns: 100%;
+  }
+}
 
 .gray,
 .grey {
