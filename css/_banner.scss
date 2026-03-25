@@ -237,6 +237,12 @@
         p {
             color: $black;
         }
+        .btn-desc {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+        }
         &:hover {
             background: $primary;
             p,

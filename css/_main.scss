@@ -791,7 +791,7 @@
   font-weight: 600;
   border-radius: 5px;
   background: var(--Light-grey-2, #efefef);
-  width: max-content;
+  // width: max-content;
   margin-bottom: 10px !important;
   &:hover {
     background: #c5e0a6;
@@ -1335,6 +1335,11 @@ p.date {
   align-items: center;
   gap: 8px;
   background: var(--Red, #930909);
+  .close {
+    position: absolute;
+    right: 15px;
+    opacity: 1;
+  }
 }
 .alert-text p {
   margin-bottom: 0px;
@@ -1578,6 +1583,14 @@ p.date {
         flex: 1;
         .cats {
           display: flex;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      .evt_card {
+        .evt_date {
+          align-items: baseline;
+          text-align: left;
         }
       }
     }
@@ -2718,7 +2731,7 @@ p.date {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
-    .fc-center{
+    .fc-center {
       order: 3;
     }
   }
@@ -3348,32 +3361,74 @@ p.date {
 }
 // lender page
 
-.lender_template{
-  .img_text_card{
-    .text-img-wrap{
-      .text_card_block{
-        .title{
-          display: flex;
-          align-items: center;
+.lender_template {
+  .img_text_card {
+    .text-img-wrap {
+      border: 2px solid #f4b940;
+      background: #fff;
+      box-shadow:
+        0 1px 3px 0 rgba(27, 31, 35, 0.15),
+        0 0 1px 0 rgba(0, 0, 0, 0.02);
+      .img_card_block {
+        img {
+          aspect-ratio: 141/106;
+        }
+      }
+      .text_card_block {
+        padding: 16px;
+        .badge {
+          border-radius: 5px;
+          border: 1px solid #f4b940;
+          background: #fff3cd;
+          padding: 3px 10px;
+          color: #856404;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 600;
+          &.grey {
+            border-radius: 5px;
+            background: var(--Light-grey-2, #efefef);
+            color: #4c4c4c;
+            border: 1px solid #efefef;
+          }
+        }
+        // .title {
+        //   display: flex;
+        //   align-items: center;
+        //   margin-bottom: 8px;
+        //   h3 {
+        //     margin: 0;
+        //   }
+        //   h4 {
+        //     font-size: 16px;
+        //   }
+        //   .badge {
+        //     margin-left: auto;
+        //   }
+        // }
+        // .doc_block {
+        //   margin-bottom: 6px;
+        // }
+        h3 {
+          font-size: 21px;
+          font-style: normal;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+        .tag {
+          color: var(--Grey, #4c4c4c);
+          font-family: "Noto Sans";
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 600;
           margin-bottom: 8px;
-          h3{
-            margin: 0;
-          }
-          h4{
-            font-size: 16px;
-          }
-          .badge{
-            margin-left: auto;
-          }
         }
-        .doc_block{
-          margin-bottom: 6px;
-        }
-        p{
+        p {
           display: block;
           overflow: auto;
           margin: 0;
-          >span{
+          margin-bottom: 10px;
+          > span {
             margin-bottom: 6px;
           }
         }
@@ -3383,8 +3438,17 @@ p.date {
 }
 .lender_filter {
   margin-bottom: 24px;
-  form > * {
-    margin-bottom: 16px;
+  form {
+    display: grid;
+    grid-template-columns: 300px 260px 1fr;
+    gap: 8px;
+    margin-bottom: 40px;
+    > * {
+      margin-bottom: 0px;
+    }
+    .reset {
+      align-self: end;
+    }
   }
   .search-box {
     input {
