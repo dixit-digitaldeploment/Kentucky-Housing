@@ -138,6 +138,7 @@
 	}
 	li {
 		@include primary-font;
+		word-break: break-all;
 	}
 	> section {
 		padding: 40px 0px;
@@ -169,8 +170,8 @@
 	padding-top: 10px;
 	position: relative;
 	.container {
-		padding-right: 0;
-		padding-left: 0;
+		// padding-right: 0;
+		// padding-left: 0;
 	}
 	> .container:has(> nav > .breadcrumb) {
 		padding-right: 15px;
@@ -349,6 +350,8 @@
 			margin-bottom: 10px;
 			text-decoration: underline;
 			@include secondary-font;
+			text-align: left;
+			line-height: 1.5;
 			&[href^="https:"]:before {
 				content: "";
 				background-image: url(../img/Link.svg);
@@ -749,7 +752,7 @@
 		box-shadow:
 			0 1px 3px 1px rgba(27, 31, 35, 0.15),
 			0 0 1px 0 rgba(0, 0, 0, 0.02);
-		cursor: pointer;
+		// cursor: pointer;
 		img {
 			aspect-ratio: 4 / 3;
 			object-fit: cover;
@@ -1232,7 +1235,8 @@ h2 + .expand_img_grid {
 	//         }
 	//      }
 	@media (max-width: 767px) {
-		height: 500px;
+		height: 250px !important;
+		aspect-ratio: 3 / 2;
 	}
 }
 
@@ -1308,7 +1312,7 @@ h2 + .expand_img_grid {
 			counter-increment: item;
 			text-indent: -60px;
 			padding-left: 60px;
-			margin-bottom: 40px;
+			// margin-bottom: 40px;
 			> strong:first-child {
 				font-weight: 600;
 				font-size: 21px;
@@ -1339,6 +1343,20 @@ h2 + .expand_img_grid {
 	ol li ul li,
 	ol li ol li {
 		margin-bottom: 10px;
+	}
+}
+
+.wp-block-embed {
+	.wp-block-embed__wrapper {
+		height: auto;
+		padding: 0;
+		div[style*="padding-bottom"] {
+			padding-bottom: 0 !important;
+			height: auto !important;
+		}
+		iframe {
+			position: relative !important;
+		}
 	}
 }
 
@@ -1495,7 +1513,7 @@ h2 + .expand_img_grid {
 		padding: 0 8px !important;
 		border: none !important;
 		margin-bottom: 16px;
-		>a{
+		> a {
 			width: 100%;
 		}
 		a {
@@ -1679,6 +1697,7 @@ h2 + .expand_img_grid {
 			padding: 16px;
 			> * {
 				margin-bottom: 6px;
+				word-break: break-word;
 			}
 			.b-name {
 				font-size: 24px;
@@ -2009,7 +2028,8 @@ h2 + .expand_img_grid {
 			margin-top: 0px !important;
 			background: $white !important;
 			padding-right: 40px !important;
-			&:hover {
+			&:hover,
+			&:focus-visible {
 				background: $primary !important;
 				.advgb-accordion-header-title {
 					color: $white !important;
@@ -2053,6 +2073,8 @@ h2 + .expand_img_grid {
 			position: absolute;
 			right: 15px;
 			background-image: url(../img/angle-down.svg);
+			top: 50%;
+			transform: translateY(-50%);
 		}
 		.ui-accordion-header-icon,
 		.advgb-accordion-header-icon {
@@ -2067,6 +2089,10 @@ h2 + .expand_img_grid {
 			max-height: unset;
 			.accordion-content {
 				padding: 25px;
+			}
+			.wp-block-group {
+				margin-left: 0 !important;
+				margin-right: 0 !important;
 			}
 		}
 		.advgb-accordion-header[aria-expanded="true"],
@@ -2128,7 +2154,7 @@ h2 + .expand_img_grid {
 .advgb-tabs-wrapper {
 	ul.advgb-tabs-panel {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		position: relative;
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -2144,11 +2170,10 @@ h2 + .expand_img_grid {
 		}
 		li.advgb-tab {
 			border-radius: 0 !important;
-			background: $lightgray3 !important;
+			background: none !important;
 			color: $primary !important;
 			font-weight: 700;
 			// min-width: 170px;
-			min-height: 55px;
 			display: flex !important;
 			align-items: center;
 			justify-content: center;
@@ -2158,6 +2183,7 @@ h2 + .expand_img_grid {
 			a {
 				@include primary-font;
 				color: $primary !important;
+				background: $lightgray3 !important;
 				text-align: center;
 				font-size: 17px;
 				font-style: normal;
@@ -2172,16 +2198,29 @@ h2 + .expand_img_grid {
 				overflow: visible !important;
 				min-width: 170px;
 				line-height: 1;
+				min-height: 55px;
+				white-space: nowrap;
 				&:focus {
 					outline: 1px dotted #000;
 				}
+				&:hover,
+				&:focus-visible {
+					// a {
+					background: $secondary !important;
+					color: #fff !important;
+					p {
+						color: #fff !important;
+					}
+					// }
+				}
 			}
 			&.advgb-tab.advgb-tab-active {
-				background: $primary !important;
+				// background: $primary !important;
 				margin-bottom: -1px !important;
 				border-right: 0 !important;
 				border-left: 0px !important;
 				a {
+					background: $primary !important;
 					color: #fff !important;
 					p {
 						color: #fff !important;
@@ -2196,15 +2235,6 @@ h2 + .expand_img_grid {
                         height: 10px;
                         bottom: -4px;
                         z-index: 999;*/
-				}
-			}
-			&:hover {
-				background: $secondary !important;
-				a {
-					color: #fff !important;
-					p {
-						color: #fff !important;
-					}
 				}
 			}
 		}

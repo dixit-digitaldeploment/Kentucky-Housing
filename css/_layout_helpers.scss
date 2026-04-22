@@ -61,8 +61,8 @@ figure.aligncenter {
     padding-left: 0px !important;
     padding-right: 0px !important;
     @media (min-width: 1200px) {
-        margin-left: calc(-50vw + 600px) !important;
-        margin-right: calc(-50vw + 600px) !important;
+        margin-left: calc(-50vw + 585px) !important;
+        margin-right: calc(-50vw + 585px) !important;
     }
     @media (max-width: 1199px) {
         width: 100vw;
@@ -71,6 +71,12 @@ figure.aligncenter {
         // padding-left: 15px !important;
         // padding-right: 15px !important;
     }
+    // .wp-block-group {
+    //     margin-left: 0 !important;
+    //     margin-right: 0 !important;
+    //     transform: unset;
+    //     width: 100%;
+    // }
     clear: both;
     > .document_era {
         .col-md-12 {
@@ -473,7 +479,7 @@ figure.aligncenter {
 }
 
 .advgb-tab-body-wrapper div.advgb-tab-body > * {
-    max-width: 900px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -499,7 +505,7 @@ div.advgb-tab-body > iframe {
 
 .advgb-tab-body-wrapper div.advgb-tab-body > div,
 .advgb-tab-body-wrapper div.advgb-tab-body > section {
-    max-width: 100%;
+    // max-width: 100%;
 }
 
 .advgb-tab-body-wrapper div.advgb-tab-body {
@@ -957,7 +963,8 @@ button.is-pressed {
             font-family: "Proxima Nova Th";
             font-weight: bold;
         }
-        h1.wp-block-post-title,h1.wp-block-heading {
+        h1.wp-block-post-title,
+        h1.wp-block-heading {
             font-size: 42px;
             font-family: "Proxima Nova Th";
             font-weight: bold;
@@ -1261,7 +1268,7 @@ legend.gform-field-label {
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
     .advgb-tabs-wrapper.advgb-tab-vert-tablet {
         flex-direction: column !important;
     }

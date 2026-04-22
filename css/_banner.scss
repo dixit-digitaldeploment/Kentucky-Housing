@@ -101,7 +101,7 @@
         opacity: 1;
         transform: translateY(-50%);
         z-index: 10;
-        &:hover {
+        &:hover,&:focus-visible {
             img {
                 filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(941%) hue-rotate(34deg)
                     brightness(93%) contrast(91%);

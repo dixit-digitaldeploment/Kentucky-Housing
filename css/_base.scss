@@ -107,6 +107,7 @@ a {
     color: $primary;
     font-weight: 600;
     text-decoration: underline;
+    
     &:hover {
         color: $secondary;
         text-decoration: underline;
@@ -334,10 +335,10 @@ label.title {
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    font-family:"Nunito Sans", sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     margin-bottom: 6px;
     line-height: 1;
-    + .checkboxes{
+    + .checkboxes {
         margin-top: 10px;
     }
 }
@@ -381,4 +382,31 @@ label.title {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #4c4c4c;
+}
+
+.skip-link {
+    border: 0;
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+    &:focus {
+        background-color: #ddd;
+        clip-path: none;
+        color: #444;
+        display: block;
+        font-size: 1em;
+        height: auto;
+        left: 5px;
+        line-height: normal;
+        padding: 15px 23px 14px;
+        text-decoration: none;
+        top: 5px;
+        width: auto;
+        z-index: 100000;
+    }
 }

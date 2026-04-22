@@ -373,6 +373,33 @@ label.title + .checkboxes {
   background: #4c4c4c;
 }
 
+.skip-link {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.skip-link:focus {
+  background-color: #ddd;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
 .main_header {
   position: fixed;
   background: #ffffff;
@@ -447,11 +474,12 @@ body.gin--classic-toolbar .main_header {
   align-items: center;
   justify-content: center;
 }
-.main_header .top_header .top_icon .views-element-container > div a:hover {
+.main_header .top_header .top_icon .views-element-container > div a:hover, .main_header .top_header .top_icon .views-element-container > div a:focus-visible {
   background: #61bb46;
 }
 .main_header .top_header .top_icon .views-element-container > div a:hover svg,
-.main_header .top_header .top_icon .views-element-container > div a:hover img {
+.main_header .top_header .top_icon .views-element-container > div a:hover img, .main_header .top_header .top_icon .views-element-container > div a:focus-visible svg,
+.main_header .top_header .top_icon .views-element-container > div a:focus-visible img {
   filter: brightness(0) saturate(100%) invert(18%) sepia(29%) saturate(3848%) hue-rotate(201deg) brightness(98%) contrast(95%);
 }
 .main_header .top_header_cont {
@@ -764,14 +792,14 @@ body.gin--classic-toolbar .main_header {
   text-decoration: underline;
 }
 .main_header .navbar-nav .dropdown-menu .mega-submenu li a:hover {
-  color: #3267E2;
+  color: #3267e2;
 }
 .main_header .navbar-nav .dropdown-menu .mega-submenu > li > a {
   font-weight: 700;
   text-decoration: none;
 }
 .main_header .navbar-nav .dropdown-menu .mega-submenu > li > a:hover {
-  color: #3267E2;
+  color: #3267e2;
   text-decoration: none;
 }
 .main_header .navbar-nav .dropdown-menu .mega-submenu ul li a {
@@ -780,7 +808,7 @@ body.gin--classic-toolbar .main_header {
   font-weight: 400;
 }
 .main_header .navbar-nav .dropdown-menu .mega-submenu ul li a:hover {
-  color: #3267E2;
+  color: #3267e2;
   text-decoration: underline;
 }
 .main_header .navbar-nav .dropdown-menu .current_page_item a,
@@ -939,6 +967,10 @@ body.gin--classic-toolbar .main_header {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
   border: none;
   padding: 24px;
+}
+.main_header .tbm-main .tbm-collapse .tbm-nav > .tbm-item > .tbm-submenu > .tbm-row {
+  -moz-column-gap: 25px;
+       column-gap: 25px;
 }
 .main_header .tbm-main .tbm-collapse .tbm-nav > .tbm-item > .tbm-submenu .tbm-block {
   padding: 0;
@@ -1265,7 +1297,7 @@ body.gin--classic-toolbar .main_header {
     padding: 0;
   }
   .main_header .navbar-nav > li > .dropdown-menu > li {
-    border-bottom: 1px solid var(--Gray-dark, #E1E0E0);
+    border-bottom: 1px solid var(--Gray-dark, #e1e0e0);
   }
   .main_header .navbar-nav > li > .dropdown-menu > li > a {
     padding: 10px 0px;
@@ -1456,8 +1488,9 @@ body.gin--classic-toolbar .main_header {
   transform: translateY(-50%);
   z-index: 10;
 }
-.main_banner .carousel-control-next:hover img,
-.main_banner .carousel-control-prev:hover img {
+.main_banner .carousel-control-next:hover img, .main_banner .carousel-control-next:focus-visible img,
+.main_banner .carousel-control-prev:hover img,
+.main_banner .carousel-control-prev:focus-visible img {
   filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(941%) hue-rotate(34deg) brightness(93%) contrast(91%);
 }
 .main_banner .carousel-control-next {
@@ -1767,20 +1800,25 @@ body.gin--classic-toolbar .main_header {
   margin-bottom: 10px;
 }
 .footer .footer-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  -moz-column-gap: 24px;
-       column-gap: 24px;
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }
 @media (max-width: 768px) {
   .footer .footer-links {
-    grid-template-columns: 1fr;
+    -moz-column-count: 1;
+         column-count: 1;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
   }
 }
 .footer .footer-links li {
   margin-bottom: 10px;
   padding-left: 15px;
   position: relative;
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
 }
 .footer .footer-links li a {
   color: #fff;
@@ -2438,9 +2476,6 @@ body.gin--classic-toolbar .main_header {
   color: #153683;
   font-weight: 600;
 }
-.result_row .rsltBody {
-  padding: 10px 16px;
-}
 .result_row .re_category {
   font-size: 16px;
   color: #222;
@@ -2555,6 +2590,7 @@ body.gin--classic-toolbar .main_header {
   font-weight: 600;
   border-radius: 5px;
   background: var(--Light-grey-2, #efefef);
+  display: inline-block;
   margin-bottom: 10px !important;
 }
 .news_category:hover {
@@ -4883,7 +4919,7 @@ p.date {
   color: #fff;
   text-transform: capitalize;
 }
-.calendar_wrap .fc-toolbar .fc-right .fc-button-group .fc-button.fc-button-active {
+.calendar_wrap .fc-toolbar .fc-right .fc-button-group .fc-button.fc-button-active, .calendar_wrap .fc-toolbar .fc-right .fc-button-group .fc-button:hover, .calendar_wrap .fc-toolbar .fc-right .fc-button-group .fc-button:focus-visible {
   background: #f5f5f5;
   color: #4c4c4c;
 }
@@ -4960,6 +4996,32 @@ p.date {
       display: none;
 }
 
+.lender_template .nav-tabs {
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--neutral-darker, #63554d);
+  position: relative;
+  z-index: 1;
+}
+.lender_template .nav-tabs .nav-item {
+  margin-right: 2px;
+  z-index: 0;
+}
+.lender_template .nav-tabs .nav-link {
+  border: 1px solid #dedede;
+  background: var(--Light-grey-3, #ececec);
+  padding: 16px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--Blue, #153683);
+  text-align: center;
+  border-radius: 0;
+  line-height: normal;
+}
+.lender_template .nav-tabs .nav-link:hover, .lender_template .nav-tabs .nav-link:focus-visible {
+  background: #153683;
+  color: #fff;
+}
 .lender_template .img_text_card .text-img-wrap {
   border: 2px solid #f4b940;
   background: #fff;
@@ -4980,6 +5042,7 @@ p.date {
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
+  white-space: unset;
 }
 .lender_template .img_text_card .text-img-wrap .text_card_block .badge.grey {
   border-radius: 5px;
@@ -5035,6 +5098,259 @@ p.date {
   }
 }
 
+.searchbar .form-type-textfield input {
+  padding-right: 40px;
+}
+
+.user-login-form > * {
+  margin-bottom: 19px;
+}
+
+.gtranslate_wrapper {
+  position: absolute;
+  top: 5px !important;
+  left: 0;
+  z-index: 9999;
+  text-align: center;
+  background: #61bb46;
+}
+
+.page-node-type-programs .page_title.primary {
+  display: none;
+}
+
+.mortgage-calculator {
+  width: 100%;
+  padding: 40px 0;
+}
+.mortgage-calculator .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+}
+.mortgage-calculator__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 776px) minmax(0, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.mortgage-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+.mortgage-card--form {
+  padding: 40px 32px;
+}
+.mortgage-card--summary {
+  padding: 40px 24px;
+}
+
+.mortgage-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mortgage-form-section + .mortgage-form-section {
+  margin-top: 32px;
+}
+
+.mortgage-form-section__title {
+  margin: 0 0 12px;
+  color: #222;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.mortgage-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mortgage-field label {
+  margin: 0;
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.mortgage-field input {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 5px;
+  border: 1px solid #4c4c4c;
+  padding: 10px 14px;
+  color: #222;
+  font-family: "Nunito Sans";
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.mortgage-field input:focus-visible {
+  outline: 2px solid #153683;
+  outline-offset: 2px;
+}
+.mortgage-field input[readonly] {
+  background: #f5f5f5;
+  color: #4c4c4c;
+  cursor: not-allowed;
+}
+.mortgage-field--inline {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 138px;
+  gap: 12px;
+  align-items: end;
+}
+.mortgage-field--readonly {
+  justify-content: flex-end;
+}
+.mortgage-field--readonly label {
+  min-height: 24px;
+}
+
+.mortgage-help {
+  margin: 0 !important;
+  color: #4c4c4c;
+  font-family: "Nunito Sans";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.mortgage-reset-btn {
+  margin-top: 32px;
+  border: 0;
+  background: transparent;
+  color: #153683;
+  font-family: "Noto Sans";
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mortgage-reset-btn:focus-visible {
+  outline: 2px solid #153683;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.mortgage-summary-total {
+  margin-bottom: 32px;
+}
+.mortgage-summary-total__label {
+  margin: 0 0 8px;
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: 18px;
+  font-weight: 700;
+}
+.mortgage-summary-total__amount {
+  margin: 0;
+  color: #153683;
+  font-family: "Poppins";
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.mortgage-breakdown {
+  margin-bottom: 32px;
+}
+.mortgage-breakdown h3 {
+  margin: 0 0 8px;
+  color: #222;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 700;
+}
+.mortgage-breakdown__list {
+  margin: 0;
+}
+.mortgage-breakdown__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+}
+.mortgage-breakdown__item dt {
+  margin: 0;
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.mortgage-breakdown__item dd {
+  margin: 0;
+  color: #000;
+  font-family: "Nunito Sans";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.mortgage-breakdown__item.pmi {
+  border-top: 1px solid #4c4c4c;
+}
+
+.mortgage-summary-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.mortgage-summary-footer__btn {
+  min-height: 44px;
+  text-align: center;
+}
+.mortgage-summary-footer p {
+  margin: 0;
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media (max-width: 1199px) {
+  .mortgage-calculator {
+    padding: 24px;
+  }
+  .mortgage-calculator__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .mortgage-card--summary {
+    margin-top: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .mortgage-calculator {
+    padding: 16px;
+  }
+  .mortgage-card--form, .mortgage-card--summary {
+    padding: 24px 16px;
+  }
+  .mortgage-field--inline {
+    grid-template-columns: 1fr;
+  }
+  .mortgage-field--readonly label {
+    min-height: auto;
+  }
+}
 .gray,
 .grey {
   background-color: #f5f5f5;
@@ -5159,6 +5475,7 @@ p.date {
 }
 .main_wrapper li {
   font-family: "Poppins", sans-serif;
+  word-break: break-all;
 }
 .main_wrapper > section {
   padding: 40px 0px;
@@ -5186,10 +5503,6 @@ p.date {
 .main_breadcrumb {
   padding-top: 10px;
   position: relative;
-}
-.main_breadcrumb .container {
-  padding-right: 0;
-  padding-left: 0;
 }
 .main_breadcrumb > .container:has(> nav > .breadcrumb) {
   padding-right: 15px;
@@ -5356,6 +5669,8 @@ p.date {
   margin-bottom: 10px;
   text-decoration: underline;
   font-family: "Noto Sans", sans-serif;
+  text-align: left;
+  line-height: 1.5;
 }
 .wp-block-advgb-resource-list .wp-block-advgb-resource .wp-block-button__link[href^="https:"]:before {
   content: "";
@@ -5678,7 +5993,6 @@ p.date {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 1px 3px 1px rgba(27, 31, 35, 0.15), 0 0 1px 0 rgba(0, 0, 0, 0.02);
-  cursor: pointer;
 }
 .wp-block-advgb-image-card .wp-block-media-text img {
   aspect-ratio: 4/3;
@@ -6090,7 +6404,8 @@ h2 + .expand_img_grid {
 }
 @media (max-width: 767px) {
   .wp-block-gallery {
-    height: 500px;
+    height: 250px !important;
+    aspect-ratio: 3/2;
   }
 }
 
@@ -6158,7 +6473,6 @@ h2 + .expand_img_grid {
   counter-increment: item;
   text-indent: -60px;
   padding-left: 60px;
-  margin-bottom: 40px;
 }
 .wp-block-advgb-how-to-list ol > li > strong:first-child,
 .wp-block-advgb-how-to-list ul > li > strong:first-child {
@@ -6191,6 +6505,18 @@ h2 + .expand_img_grid {
 .wp-block-advgb-how-to-list ol li ul li,
 .wp-block-advgb-how-to-list ol li ol li {
   margin-bottom: 10px;
+}
+
+.wp-block-embed .wp-block-embed__wrapper {
+  height: auto;
+  padding: 0;
+}
+.wp-block-embed .wp-block-embed__wrapper div[style*=padding-bottom] {
+  padding-bottom: 0 !important;
+  height: auto !important;
+}
+.wp-block-embed .wp-block-embed__wrapper iframe {
+  position: relative !important;
 }
 
 .simple_list_info .row {
@@ -6498,6 +6824,7 @@ h2 + .expand_img_grid {
 }
 .wp-block-advgb-contact-block .wp-block-advgb-contact .contact-card > * {
   margin-bottom: 6px;
+  word-break: break-word;
 }
 .wp-block-advgb-contact-block .wp-block-advgb-contact .contact-card .b-name {
   font-size: 24px;
@@ -6813,22 +7140,31 @@ h2 + .expand_img_grid {
   background: #ffffff !important;
   padding-right: 40px !important;
 }
-.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:hover,
+.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:hover, .wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:focus-visible,
 .wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header:hover,
+.wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header:focus-visible,
 .advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-header:hover,
-.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:hover {
+.advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-header:focus-visible,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:hover,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:focus-visible {
   background: #153683 !important;
 }
-.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-title,
+.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-title, .wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-title,
 .wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-title,
+.wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-title,
 .advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-title,
-.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-title {
+.advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-title,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-title,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-title {
   color: #ffffff !important;
 }
-.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-icon,
+.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-icon, .wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-icon,
 .wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-icon,
+.wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-icon,
 .advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-icon,
-.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-icon {
+.advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-icon,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:hover .advgb-accordion-header-icon,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-header:focus-visible .advgb-accordion-header-icon {
   filter: brightness(0) invert(1);
 }
 .wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header .advgb-accordion-header-title,
@@ -6874,6 +7210,8 @@ h2 + .expand_img_grid {
   position: absolute;
   right: 15px;
   background-image: url(../img/angle-down.svg);
+  top: 50%;
+  transform: translateY(-50%);
 }
 .wp-block-advgb-accordions .wp-block-advgb-accordion-item .ui-accordion-header-icon,
 .wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header-icon,
@@ -6901,6 +7239,13 @@ h2 + .expand_img_grid {
 .advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-body .accordion-content,
 .advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-body .accordion-content {
   padding: 25px;
+}
+.wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-body .wp-block-group,
+.wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-body .wp-block-group,
+.advgb-accordions-wrapper .wp-block-advgb-accordion-item .advgb-accordion-body .wp-block-group,
+.advgb-accordions-wrapper .advgb-accordion-item .advgb-accordion-body .wp-block-group {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 .wp-block-advgb-accordions .wp-block-advgb-accordion-item .advgb-accordion-header[aria-expanded=true] .advgb-accordion-header-icon, .wp-block-advgb-accordions .wp-block-advgb-accordion-item.expanded .advgb-accordion-header-icon,
 .wp-block-advgb-accordions .advgb-accordion-item .advgb-accordion-header[aria-expanded=true] .advgb-accordion-header-icon,
@@ -6957,7 +7302,7 @@ h2 + .expand_img_grid {
 
 .advgb-tabs-wrapper ul.advgb-tabs-panel {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
@@ -6965,10 +7310,9 @@ h2 + .expand_img_grid {
 }
 .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab {
   border-radius: 0 !important;
-  background: #ececec !important;
+  background: none !important;
   color: #153683 !important;
   font-weight: 700;
-  min-height: 55px;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -6979,6 +7323,7 @@ h2 + .expand_img_grid {
 .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab a {
   font-family: "Poppins", sans-serif;
   color: #153683 !important;
+  background: #ececec !important;
   text-align: center;
   font-size: 17px;
   font-style: normal;
@@ -6993,17 +7338,26 @@ h2 + .expand_img_grid {
   overflow: visible !important;
   min-width: 170px;
   line-height: 1;
+  min-height: 55px;
+  white-space: nowrap;
 }
 .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab a:focus {
   outline: 1px dotted #000;
 }
+.advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab a:hover, .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab a:focus-visible {
+  background: #3267e2 !important;
+  color: #fff !important;
+}
+.advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab a:hover p, .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab a:focus-visible p {
+  color: #fff !important;
+}
 .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab.advgb-tab.advgb-tab-active {
-  background: #153683 !important;
   margin-bottom: -1px !important;
   border-right: 0 !important;
   border-left: 0px !important;
 }
 .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab.advgb-tab.advgb-tab-active a {
+  background: #153683 !important;
   color: #fff !important;
 }
 .advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab.advgb-tab.advgb-tab-active a p {
@@ -7018,15 +7372,6 @@ h2 + .expand_img_grid {
                      height: 10px;
                      bottom: -4px;
                      z-index: 999;*/
-}
-.advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab:hover {
-  background: #3267e2 !important;
-}
-.advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab:hover a {
-  color: #fff !important;
-}
-.advgb-tabs-wrapper ul.advgb-tabs-panel li.advgb-tab:hover a p {
-  color: #fff !important;
 }
 .advgb-tabs-wrapper .advgb-tabs-panel::-webkit-scrollbar {
   width: 6px;
@@ -7467,8 +7812,8 @@ figure.aligncenter {
 }
 @media (min-width: 1200px) {
   .wp-block-group {
-    margin-left: calc(-50vw + 600px) !important;
-    margin-right: calc(-50vw + 600px) !important;
+    margin-left: calc(-50vw + 585px) !important;
+    margin-right: calc(-50vw + 585px) !important;
   }
 }
 @media (max-width: 1199px) {
@@ -7840,7 +8185,7 @@ figure.aligncenter {
 }
 
 .advgb-tab-body-wrapper div.advgb-tab-body > * {
-  max-width: 900px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -7861,11 +8206,6 @@ div.advgb-tab-body > iframe {
 
 .advgb-tab-body-wrapper div.advgb-tab-body > .wp-block-button {
   margin-bottom: 20px;
-}
-
-.advgb-tab-body-wrapper div.advgb-tab-body > div,
-.advgb-tab-body-wrapper div.advgb-tab-body > section {
-  max-width: 100%;
 }
 
 .advgb-tab-body-wrapper div.advgb-tab-body > ul li,
@@ -8238,7 +8578,8 @@ button.is-pressed .dashicons::before {
   font-family: "Proxima Nova Th";
   font-weight: bold;
 }
-#wpcontent .edit-post-visual-editor h1.wp-block-post-title, #wpcontent .edit-post-visual-editor h1.wp-block-heading {
+#wpcontent .edit-post-visual-editor h1.wp-block-post-title,
+#wpcontent .edit-post-visual-editor h1.wp-block-heading {
   font-size: 42px;
   font-family: "Proxima Nova Th";
   font-weight: bold;
@@ -8493,7 +8834,7 @@ legend.gform-field-label {
     min-height: 400px;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   .advgb-tabs-wrapper.advgb-tab-vert-tablet {
     flex-direction: column !important;
   }

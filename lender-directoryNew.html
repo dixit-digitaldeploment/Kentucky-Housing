@@ -136,7 +136,7 @@
       </div>
     </div>
     <div class="page_title housing_program_title">
-      <h1>Lender Directory</h1>
+      <h1>Find a KHC-Approved Lender</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit.</p>
@@ -166,7 +166,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="filter_box" id="filter-category-box">
+                    <!-- <div class="filter_box" id="filter-category-box">
                       <label class="title" for="contact-type">Contact Type</label>
                       <select id="contact-type" class="form-control" aria-label="Filter by contact">
                         <option>Contact</option>
@@ -174,80 +174,304 @@
                         <option class="">1</option>
                         <option class="">2</option>
                       </select>
-                    </div>
-                    <a class="reset" data-uw-rm-kbnav="anohref" tabindex="0">
+                    </div> -->
+                    <!-- <a class="reset" data-uw-rm-kbnav="anohref" tabindex="0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
                           d="M14.7812 6.28135C15.075 5.9876 15.075 5.5126 14.7812 5.22197C14.4875 4.93135 14.0125 4.92822 13.7219 5.22197L10.0031 8.94072L6.28123 5.21885C5.98748 4.9251 5.51248 4.9251 5.22185 5.21885C4.93123 5.5126 4.9281 5.9876 5.22185 6.27822L8.9406 9.99697L5.21873 13.7188C4.92498 14.0126 4.92498 14.4876 5.21873 14.7782C5.51248 15.0688 5.98748 15.072 6.2781 14.7782L9.99685 11.0595L13.7187 14.7813C14.0125 15.0751 14.4875 15.0751 14.7781 14.7813C15.0687 14.4876 15.0718 14.0126 14.7781 13.722L11.0594 10.0032L14.7812 6.28135Z"
                           fill="#153683" />
                       </svg>
                       Clear Filters
-                    </a>
+                    </a> -->
                   </form>
                 </div>
-                <div class="img_text_card_row row">
-                  <div class="col-md-3  img_text_card_col">
-                    <div class="text-img-wrap">
-                      <div class="img_card_block">
-                        <img src="img/card-img.png" alt="">
+                <ul class="nav nav-tabs" id="lender-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="top-producers-tab" data-toggle="tab"
+                      data-target="#top-producers" type="button" role="tab" aria-controls="top-producers"
+                      aria-selected="true">Top Producers</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="lenders-tab" data-toggle="tab" data-target="#lenders" type="button"
+                      role="tab" aria-controls="lenders" aria-selected="false">Lenders</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="loan-officers-tab" data-toggle="tab" data-target="#loan-officers"
+                      type="button" role="tab" aria-controls="loan-officers" aria-selected="false">Loan
+                      Officers</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="real-state-agencies-tab" data-toggle="tab"
+                      data-target="#real-state-agencies" type="button" role="tab" aria-controls="real-state-agencies"
+                      aria-selected="false">Real State Agencies</button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="top-producers" role="tabpanel"
+                    aria-labelledby="top-producers-tab" tabindex="0">
+                    <div class="img_text_card_row row">
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
-                      <div class="text_card_block">
-                        <span class="badge">First-Place Winner</span>
-                        <h3>Title of News Item</h3>
-                        <p class="tag">Lender</p>
-                        <p>NMLS: 8259</p>
-                        <span class="badge grey">Top Lenders</span>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
 
                     </div>
                   </div>
-                  <div class="col-md-3  img_text_card_col">
-                    <div class="text-img-wrap">
-                      <div class="img_card_block">
-                        <img src="img/card-img.png" alt="">
+                  <div class="tab-pane fade" id="lenders" role="tabpanel" aria-labelledby="lenders-tab" tabindex="0">
+                    <div class="img_text_card_row row">
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
-                      <div class="text_card_block">
-                        <span class="badge">First-Place Winner</span>
-                        <h3>Title of News Item</h3>
-                        <p class="tag">Lender</p>
-                        <p>NMLS: 8259</p>
-                        <span class="badge grey">Top Lenders</span>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
 
                     </div>
                   </div>
-                  <div class="col-md-3  img_text_card_col">
-                    <div class="text-img-wrap">
-                      <div class="img_card_block">
-                        <img src="img/card-img.png" alt="">
+                  <div class="tab-pane fade" id="loan-officers" role="tabpanel" aria-labelledby="loan-officers-tab"
+                    tabindex="0">
+                    <div class="img_text_card_row row">
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
-                      <div class="text_card_block">
-                        <span class="badge">First-Place Winner</span>
-                        <h3>Title of News Item</h3>
-                        <p class="tag">Lender</p>
-                        <p>NMLS: 8259</p>
-                        <span class="badge grey">Top Lenders</span>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
 
                     </div>
                   </div>
-                  <div class="col-md-3  img_text_card_col">
-                    <div class="text-img-wrap">
-                      <div class="img_card_block">
-                        <img src="img/card-img.png" alt="">
+                  <div class="tab-pane fade" id="real-state-agencies" role="tabpanel"
+                    aria-labelledby="real-state-agencies-tab" tabindex="0">
+                    <div class="img_text_card_row row">
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
-                      <div class="text_card_block">
-                        <span class="badge">First-Place Winner</span>
-                        <h3>Title of News Item</h3>
-                        <p class="tag">Lender</p>
-                        <p>NMLS: 8259</p>
-                        <span class="badge grey">Top Lenders</span>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-md-3  img_text_card_col">
+                        <div class="text-img-wrap">
+                          <div class="img_card_block">
+                            <img src="img/card-img.png" alt="">
+                          </div>
+                          <div class="text_card_block">
+                            <span class="badge">First-Place Winner</span>
+                            <h3>Title of News Item</h3>
+                            <p class="tag">Lender</p>
+                            <p>NMLS: 8259</p>
+                            <span class="badge grey">Top Lenders</span>
+                          </div>
+
+                        </div>
                       </div>
 
                     </div>
                   </div>
-
                 </div>
+
               </div>
             </div>
           </div>
